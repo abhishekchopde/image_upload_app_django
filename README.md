@@ -38,7 +38,7 @@ This should get your app running and live. You can test uploading any images and
 ## Containerzing
 
 Now its time to containerize the application and run it inside docker containers. Go through the Dockerfile and docker-compose.yml file to have an idea about how to configure these containers for your application. For deeper understanding on docker and docker-compose, visit my blog on medium:
-***[Containerizing a django applicatio using Docker and Docker Compose](https://medium.com/@logan_14/containerizing-a-django-application-using-dockers-c18cdc9a838e)***
+***[Containerizing a django application using Docker and Docker Compose](https://medium.com/@logan_14/containerizing-a-django-application-using-dockers-c18cdc9a838e)***
 
 ```$ docker-compose up -d```
 
