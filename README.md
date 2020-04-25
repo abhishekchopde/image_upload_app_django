@@ -3,12 +3,15 @@
 This API enables a user to upload an image and store its metadata to the mongodb database. Docker files and docker-compose files are present along with the code which we will use to containerize the applciation.
 
 ##Installations
-####Django
+
+###Django
 > pip install -r requirements.txt
-####Docker
+
+###Docker
 [Docker official Installation Guide](https://docs.docker.com/engine/install/ubuntu/)
 [Docker Compose](https://docs.docker.com/compose/install/)
-####Mongodb
+
+###Mongodb
 [MongoDB CE (Ubuntu)](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/) - you can also look for other distributions available through Mongo
 
 ##Usage
