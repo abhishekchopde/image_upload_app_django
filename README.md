@@ -1,7 +1,9 @@
 # Containerizing a django application using Dockers
-          Django           |          Docker
-:-------------------------:|:-------------------------:
-![](https://github.com/abhishekchopde/image_upload_app_django/blob/master/logos/django_logo.png)  |  ![](https://github.com/abhishekchopde/image_upload_app_django/blob/master/logos/docker_logo.png)
+          Django           |          Docker           |
+:-------------------------:|:-------------------------:|
+<img src="/logos/django_logo.png" alt="Django"
+	title="Django" width="150" height="100" />  |  <img src="/logos/docker_logo.png" alt="Docker"
+	title="Docker" width="150" height="100" /> |
 This API enables a user to upload an image and store its metadata to the mongodb database. Docker files and docker-compose files are present along with the code which we will use to containerize the applciation.
 
 ## Installations
