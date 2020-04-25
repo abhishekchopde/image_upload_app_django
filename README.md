@@ -9,11 +9,11 @@ This API enables a user to upload an image and store its metadata to the mongodb
 ``` pip install -r requirements.txt```
 
 ### Docker
-[Docker official Installation Guide](https://docs.docker.com/engine/install/ubuntu/)
-[Docker Compose](https://docs.docker.com/compose/install/)
+- [Docker official Installation Guide](https://docs.docker.com/engine/install/ubuntu/)
+- [Docker Compose](https://docs.docker.com/compose/install/)
 
 ### Mongodb
-[MongoDB CE (Ubuntu)](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/) - you can also look for other distributions available through Mongo
+- [MongoDB CE (Ubuntu)](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/) - you can also look for other distributions available through Mongo
 
 ## Usage
 Once all the installations are done. Lets start with running an application on your system first. For that you will need to install MongoDB on your host machine.
@@ -41,9 +41,11 @@ Now its time to containerize the application and run it inside docker containers
 ***[Containerizing a django applicatio using Docker and Docker Compose](https://medium.com/@logan_14/containerizing-a-django-application-using-dockers-c18cdc9a838e)***
 
 ``` docker-compose up -d```
+
 '-d' flag will help you run your containers and compose in detached mode(daemoning). You can check if the containers are running by,
 
+To list all the containers which are up at the mome
 ``` docker ps```
-This should list all the containers which are up at the moment.
+
 
 Hope this helps. Thanks!!
