@@ -16,9 +16,21 @@ This API enables a user to upload an image and store its metadata to the mongodb
 - [MongoDB CE (Ubuntu)](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/) - you can also look for other distributions available through Mongo
 
 ## Usage
-Once all the installations are done. Lets start with running an application on your system first. For that you will need to install MongoDB on your host machine.
+Once all the installations are done. Lets start with running an application on your system first. For that you will need to install MongoDB on your host machine. 
 
-Now the first lets do migraytions for our models. I have already included the migrations in the repo. You are free to redo them if you choose to rename the database or anything else.
+Make sure you change host for Mongodb in settings.py file to localhost while running onn host machine.
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'djongo',
+        'NAME': 'test',
+        'HOST': MONGODB_TEST_HOST,
+        'PORT': 27017,
+    }
+}
+# Dont forget to export env_var.sh file to have required ENV vars in your environment while running locally.
+```
+Now the first lets do migrations for our models. I have already included the migrations in the repo. You are free to redo them if you choose to rename the database or anything else.
 Make sure you are inside your python environment and you have initiated your mongodb.
 
 ```
