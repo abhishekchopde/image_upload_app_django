@@ -6,8 +6,15 @@ This API enables a user to upload an image and store its metadata to the mongodb
 ## Installations
 
 #### Django
-``` $ pip install -r requirements.txt```
+Create a new conda environment. And install using env.yml file or requirements.txt file. \
+**Python: 3.6.9**
 
+I am using conda environment as my python environment. Fell free to use python virtual environment if you want.
+Just make sure you do required changes to the Dockerfile for installations and env activation etc. It should be pretty easy.
+
+```(your_conda_env)$ pip install -r requirements.txt```
+
+**Note -** If the app throws pymongo error; uninstall bson and pymongo and just reinstall pymongo. It will install the required bson version.
 #### Docker
 - [Docker official Installation Guide](https://docs.docker.com/engine/install/ubuntu/)
 - [Docker Compose](https://docs.docker.com/compose/install/)

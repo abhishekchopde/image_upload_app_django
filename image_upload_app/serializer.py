@@ -19,16 +19,7 @@ def hash_image(file, block_size=65536):
     return hasher.hexdigest()
 
 
-# hash block size is of 1 KB
-def hash_data(data, block_size = 1024):
-    hasher = hashlib.md5()
-    for i in range(5):
-        buf = data[i*block_size:(i+1)*block_size]
-        hasher.update(buf)
-    return hasher.hexdigest()
-
-class uploadedImagesSerializer(serializers.ModelSerializer):
-
+class ImagesDBSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         return Images.objects.create(**validated_data)
 
@@ -38,7 +29,6 @@ class uploadedImagesSerializer(serializers.ModelSerializer):
 
 
 class imageUploadSerializer(serializers.Serializer):
-    # use_url gives file url, i.e. MEDIA_URL + filename
     image = serializers.FileField(max_length=None, allow_empty_file=False)
     uploadedBy = serializers.CharField(max_length=20, allow_blank=False)
     def create(self, validated_data):
@@ -58,10 +48,10 @@ class imageUploadSerializer(serializers.Serializer):
             image_obj = Images.objects.filter(imageHash=image_hash)[0]
             data['uploadedBy'] = image_obj.uploadedBy
             data['imageType'] = image_obj.imageType
-            image_serializer = uploadedImagesSerializer(instance=image_obj, data=data)
+            image_serializer = ImagesDBSerializer(instance=image_obj, data=data)
             image_exist = True
         except Exception as e:
-            image_serializer = uploadedImagesSerializer(data=data)
+            image_serializer = ImagesDBSerializer(data=data)
 
         # saving the data in db
         if image_serializer.is_valid():
@@ -78,4 +68,4 @@ class imageUploadSerializer(serializers.Serializer):
             except Exception as e:
                 logger.exception("error saving videos")
                 return JsonResponse({"internal error ": "videos upload failed"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-        return JsonResponse({"hashe": image_hash}, status=status.HTTP_201_CREATED)
+        return JsonResponse({"hash": image_hash}, status=status.HTTP_201_CREATED)
