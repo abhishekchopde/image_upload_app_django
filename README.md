@@ -5,14 +5,14 @@ This API enables a user to upload an image and store its metadata to the mongodb
 
 ## Installations
 
-### Django
+#### Django
 ``` pip install -r requirements.txt```
 
-### Docker
+#### Docker
 - [Docker official Installation Guide](https://docs.docker.com/engine/install/ubuntu/)
 - [Docker Compose](https://docs.docker.com/compose/install/)
 
-### Mongodb
+#### Mongodb
 - [MongoDB CE (Ubuntu)](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/) - you can also look for other distributions available through Mongo
 
 ## Usage
@@ -44,7 +44,8 @@ Now its time to containerize the application and run it inside docker containers
 
 '-d' flag will help you run your containers and compose in detached mode(daemoning). You can check if the containers are running by,
 
-To list all the containers which are up at the mome
+To list all the containers which are up at the moment
+
 ``` docker ps```
 
 
