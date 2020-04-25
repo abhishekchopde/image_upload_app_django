@@ -1,0 +1,41 @@
+version: '3.1'
+
+services:
+  mongodb:
+    image: mongo
+    restart: always
+    volumes:
+      - /var/lib/mongodb:/data/db
+    ports:
+      - '127.0.0.1:27017:27017'
+
+  web:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+
+    restart: always
+    command: python manage.py runserver 0.0.0.0:8090
+    volumes:
+      - ../media_root/logs:/opt/services/my_app/media_root/logs
+      - ../media_root/upload_service:/opt/services/my_app/media_root/upload_service
+    ports:
+      - 9049:9049
+    links:
+      - mongodb
+    depends_on:
+      - migration
+
+  migration:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    command: python manage.py migrate
+    volumes:
+      - ../media_root/logs:/opt/services/my_app/media_root/logs
+      - ../media_root/upload_service:/opt/services/my_app/media_root/upload_service
+    links:
+      - mongodb
+    depends_on:
+      - mongodb
